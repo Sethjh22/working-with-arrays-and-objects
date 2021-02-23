@@ -11,34 +11,34 @@
 // Do not edit the code below.
 var employees = [
   {
-    "firstName": "Von",
-    "lastName": "Budibent",
-    "email": "vbudibent0@163.com",
-    "department": "Sales"
+    firstName: "Von",
+    lastName: "Budibent",
+    email: "vbudibent0@163.com",
+    department: "Sales"
   },
   {
-    "firstName": "Catherina",
-    "lastName": "Swalowe",
-    "email": "cswalowe1@example.com",
-    "department": "Engineering"
+    firstName: "Catherina",
+    lastName: "Swalowe",
+    email: "cswalowe1@example.com",
+    department: "Engineering"
   },
   {
-    "firstName": "Theo",
-    "lastName": "Trill",
-    "email": "ttrill2@sina.com.cn",
-    "department": "Services"
+    firstName: "Theo",
+    lastName: "Trill",
+    email: "ttrill2@sina.com.cn",
+    department: "Services"
   },
   {
-    "firstName": "Elsy",
-    "lastName": "McCrorie",
-    "email": "emccrorie3@netscape.com",
-    "department": "Legal"
+    firstName: "Elsy",
+    lastName: "McCrorie",
+    email: "emccrorie3@netscape.com",
+    department: "Legal"
   },
   {
-    "firstName": "Lorie",
-    "lastName": "Handsheart",
-    "email": "lhandsheart4@fotki.com",
-    "department": "Research and Development"
+    firstName: "Lorie",
+    lastName: "Handsheart",
+    email: "lhandsheart4@fotki.com",
+    department: "Research and Development"
   }
 ];
 // Do not edit the code above.
@@ -51,6 +51,17 @@ var employees = [
 */
 
 //Code Here
+// let emplayeeUpdater = () => 
+function employeeUpdater() {
+  for(let key in employees){
+    if(employees[key].firstName === 'Theo'){
+      delete employees[key]
+    } else if(employees[key].firstName === 'Lorie'){
+      employees[key].department = 'HR'
+    }
+  }
+  return employees
+}
 
 
 
@@ -69,6 +80,17 @@ var workplaceAccidents = [12, 56, 44, 3, 29, 56, 56, 3, 7, 12];
 */
 
 //Code Here
+
+function removeDuplicates() {
+for(let i=0; i < workplaceAccidents.length; i++){
+  for(let j= workplaceAccidents.length -1; j>i; j--){
+    if(workplaceAccidents[i] === workplaceAccidents[j]){
+      workplaceAccidents.splice(j, 1)
+    }
+  }
+}
+return workplaceAccidents
+}
 
 
 
@@ -97,8 +119,11 @@ var cat = {
 */
 
 //Code Here
-var grumpyActivity;
-var fluffy2ndFriend;
+// var grumpyActivity = Object.assign({},cat.catFriends[0].activities[1])
+var grumpyActivity = cat.catFriends[0].activities[1]
+
+// var fluffy2ndFriend = Object.assign({}, cat.catFriends[1].name)
+var fluffy2ndFriend = cat.catFriends[1].name
 
 
 
@@ -139,8 +164,21 @@ var myCar = {
 */
 
 //Code Here
+// function recordCleaner(){
+//   for(let key in myCar.accidents){
+//     if (key === 'atFaultForAccident'){
+//       return atFaultForAccident = false
+//     }
 
-
+//   }
+  
+// }
+// recordCleaner(myCar.accidents)
+const recordCleaner = () => {
+   myCar.accidents.forEach(obj => {
+     obj.atFaultForAccident = false
+  })
+}
 
 ////////// PROBLEM 5 //////////
 
@@ -158,5 +196,17 @@ var numsArr = [ [1, 2, 3, 4], [5, 6], [7, 8, 9, 10, 11]];
 */
 
 //Code Here
+function looper(){
+  for(let i = 0; i < numsArr.length; i++){
+    for(let j = 0; j < numsArr[i].length; j++ ){
+      if(numsArr[i][j] % 2 === 0){
+        numsArr[i][j] = 'even'
+      } else {
+        numsArr[i][j] = 'odd'
+      }
+    }
+  }
+  return numsArr
+}
 
 
